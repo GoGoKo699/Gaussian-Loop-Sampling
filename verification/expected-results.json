@@ -1,0 +1,158 @@
+{
+  "identities": {
+    "ordered_rooted_walks_checked": 680,
+    "maximum_walk_length": 8,
+    "loop_intensity_tail_bound": 1.742209158537858e-05,
+    "delta_truncation_error": 7.664121616582798e-06,
+    "gamma_truncation_error": 1.5319539622455844e-05,
+    "phase_log_pgf_truncation_error": 8.016946238739719e-07,
+    "bubble_logdet_error": 0.0,
+    "gauge_parameter_error": 0.0,
+    "signed_real_negative_mass": 0.0102054986300638,
+    "fourier_truncation_error_bound": 0.0006009753537693167,
+    "status": "passed"
+  },
+  "sampling": {
+    "status": "passed",
+    "cases": {
+      "one_mode": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999838871108832,
+        "delta": 0.0,
+        "gamma": 0.0,
+        "mean_weight": 1.0,
+        "empirical_second_moment": 1.0,
+        "predicted_second_moment": 1.0,
+        "maximum_probability_absolute_error": 0.006085345575496781,
+        "empirical_reference_photons": 0.419,
+        "predicted_reference_photons": 0.4336917562724015
+      },
+      "two_mode_pair": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999847412109375,
+        "delta": 0.0,
+        "gamma": 0.0,
+        "mean_weight": 1.0,
+        "empirical_second_moment": 1.0,
+        "predicted_second_moment": 1.0,
+        "maximum_probability_absolute_error": 0.0012812499999999994,
+        "empirical_reference_photons": 0.6618333333333334,
+        "predicted_reference_photons": 0.6666666666666666
+      },
+      "positive_dense": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999999803998353,
+        "delta": 0.0,
+        "gamma": 0.0,
+        "mean_weight": 1.0,
+        "empirical_second_moment": 1.0,
+        "predicted_second_moment": 1.0,
+        "maximum_probability_absolute_error": 0.0013829643080786255,
+        "empirical_reference_photons": 0.175,
+        "predicted_reference_photons": 0.17716772508934225
+      },
+      "gauge_phases": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999999803998354,
+        "delta": 4.163336342344337e-17,
+        "gamma": 6.938893903907228e-17,
+        "mean_weight": 1.0,
+        "empirical_second_moment": 1.0,
+        "predicted_second_moment": 1.0,
+        "maximum_probability_absolute_error": 0.001079811636664596,
+        "empirical_reference_photons": 0.1765,
+        "predicted_reference_photons": 0.17716772508934225
+      },
+      "signed_real": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999974399999999,
+        "delta": 0.0204109972601276,
+        "gamma": 0.0408219945202552,
+        "mean_weight": 1.0048011049043115,
+        "empirical_second_moment": 1.0416666666665373,
+        "predicted_second_moment": 1.0416666666666667,
+        "maximum_probability_absolute_error": 0.0030413115981484454,
+        "empirical_reference_photons": 0.6023333333333334,
+        "predicted_reference_photons": 0.6041666666666669,
+        "negative_mass": 0.0102054986300638,
+        "signed_estimator_maximum_probability_error": 0.004208635792479383,
+        "positive_part_maximum_single_event_error": 0.004886666666666666,
+        "positive_part_analytical_TV_bound": 0.010310363079828789
+      },
+      "complex_phases": {
+        "samples": 12000,
+        "enumerated_target_mass_through_14": 0.9999999926327073,
+        "delta": 0.0009935194140036768,
+        "gamma": 0.0009545322364328396,
+        "mean_weight": 0.9996330835217511,
+        "empirical_second_moment": 1.0005987278613686,
+        "predicted_second_moment": 1.0009549879473134,
+        "maximum_probability_absolute_error": 0.002339177894472355,
+        "empirical_reference_photons": 0.17966666666666667,
+        "predicted_reference_photons": 0.17716772508934225
+      }
+    }
+  },
+  "topology": {
+    "small_graph_checks": {
+      "C6": {
+        "relative_bass_determinant_error": 2.4424906541753444e-15,
+        "absolute_delta_identity_error": 1.5265566588595902e-16,
+        "normalized_power_trace_error": 1.2212453270876722e-14
+      },
+      "K3,3": {
+        "relative_bass_determinant_error": 1.1103461517909094e-15,
+        "absolute_delta_identity_error": 3.78169781354857e-16,
+        "normalized_power_trace_error": 1.7306577178299865e-14
+      },
+      "Petersen": {
+        "relative_bass_determinant_error": 1.9984257605428136e-15,
+        "absolute_delta_identity_error": 5.169475958410885e-16,
+        "normalized_power_trace_error": 4.440892098500626e-15
+      }
+    },
+    "unequal_weight_bass_relative_error": 8.886687144565324e-16,
+    "explicit_lps_graph": {
+      "prime": 13,
+      "vertices": 2184,
+      "degree": 6,
+      "connected": true,
+      "bipartite": true,
+      "girth": 8
+    },
+    "finite_size_certificates": {
+      "degree": 6,
+      "coupling_t": 0.5,
+      "nonbacktracking_q": 0.4322356371699781,
+      "inverse_power_exponent": 0.3615547196555065,
+      "strict_inverse_power_coupling_threshold": 0.7366044601543223,
+      "table": [
+        {
+          "prime": 13,
+          "modes": 2184,
+          "guaranteed_girth_lower_bound": 6,
+          "delta_upper_bound": 0.08547762493805276,
+          "tv_upper_bound": 0.08192631522008408,
+          "rounded_up_tv_upper_bound": 0.081927
+        },
+        {
+          "prime": 53,
+          "modes": 148824,
+          "guaranteed_girth_lower_bound": 10,
+          "delta_upper_bound": 0.004619060472674117,
+          "tv_upper_bound": 0.004608409019062526,
+          "rounded_up_tv_upper_bound": 0.004609
+        },
+        {
+          "prime": 113,
+          "modes": 1442784,
+          "guaranteed_girth_lower_bound": 12,
+          "delta_upper_bound": 0.001377308086792095,
+          "tv_upper_bound": 0.0013763600333129833,
+          "rounded_up_tv_upper_bound": 0.001377
+        }
+      ]
+    },
+    "status": "passed"
+  }
+}
