@@ -1,0 +1,40 @@
+# Gaussian Loop Sampling
+
+Scientific question: when does the determinant generating function of Gaussian
+photon counts admit an efficient classical positive or signed loop construction?
+
+Entry point: README.md
+Model, assumptions, notation, and reading route: science/model.md
+Positive sampler and ideal arithmetic complexity: science/direct-sampler.md
+Phase estimators, negative mass, and observable access: science/estimators.md
+Full-distribution graph certificates and explicit LPS family: science/topology.md
+Finite-bit construction, precision, randomness, and tails: science/finite-precision.md
+Physical meaning and computational boundaries: science/interpretation.md
+Prior results, derived corollaries, and novelty boundaries: references/RELATED_WORK.md
+Structured source metadata: references/references.bib
+Verification commands, scope, and API: verification/README.md
+Runnable numerical implementation: gaussian_loops/sampler.py
+Independent small-system hafnian calculation: gaussian_loops/exact.py
+
+Suggested routes:
+- Story: README -> model -> interpretation -> related work.
+- Algorithm: model -> direct sampler -> verification guide -> sampler.py.
+- Phase question: model -> estimators -> finite precision.
+- Graph theorem: model -> topology -> check_topology.py.
+- Reproduction: verification/README.md -> verification/run_all.py.
+
+Preserve these scientific distinctions:
+- Physical B has norm below one; the algorithm additionally needs |B| stable.
+- Full-distribution sampling, bounded-observable estimation, and probability
+  evaluation have different error guarantees.
+- The reference mean N_C, not only the target mean N_B, pays for loop visits.
+- Genuine Poisson loops must remain grouped before taking a cosine or thinning.
+- Delta, Gamma, and negative loop mass are sufficient resources of this
+  representation, not unrestricted classical hardness measures.
+- The finite-bit theorem uses a different construction from the cubic
+  ideal-arithmetic excursion sampler. Floating-point code is not certified.
+- The graph-family approximation has a fixed, explicit structural error;
+  additional samples cannot remove it. Support-treewidth is not entanglement.
+- Attribute the Gaussian generating function, loop soup, bubble decomposition,
+  Bass identity, and Ramanujan construction to their cited sources. Do not claim
+  first polynomial-time nonnegative GBS or a quantum advantage theorem.
