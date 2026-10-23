@@ -20,14 +20,14 @@ For any symmetric matrix $`X`$ with $`\|X\|_2<1`$, define
 \Lambda_X=-\frac12\log\det(I-X X^\dagger),
 \qquad
 p_X(\mathbf n)=e^{-\Lambda_X}
-\frac{|\operatorname{haf}(X[\mathbf n])|^2}{\prod_i n_i!}.
+\frac{|\mathrm{haf}(X[\mathbf n])|^2}{\prod_i n_i!}.
 ```
 
 The empty hafnian is one, and an odd-order hafnian is zero. Replacing $`XX^\dagger`$ by $`X^\dagger X`$ leaves the determinant unchanged. The reference photon number is
 
 ```math
 \overline N_C
-=\operatorname{Tr}\!\left[C^2(I-C^2)^{-1}\right].
+=\mathrm{Tr}\!\left[C^2(I-C^2)^{-1}\right].
 ```
 
 The algorithms pay for $`\overline N_C`$, which can exceed the physical mean $`\overline N_B`$ substantially. In particular,
@@ -81,7 +81,7 @@ G_B(z)
 =\exp\left\{\int c(w)\bigl(z^{v(w)}-1\bigr)d\mu_C(w)\right\}.
 ```
 
-To see the cosine explicitly, expand $`-\tfrac12\log\det(I-BZB^\dagger Z)`$, where $`Z=\operatorname{diag}(z)`$. Each term is an alternating closed walk. Rotating a walk by one edge conjugates its magnetic weight and preserves its occupation monomial. Pairing these terms replaces the phase factor by its real part. Absolute convergence follows from $`\|C\|_2<1`$ for $`|z_i|\le1`$.
+To see the cosine explicitly, expand $`-\tfrac12\log\det(I-BZB^\dagger Z)`$, where $`Z=\mathrm{diag}(z)`$. Each term is an alternating closed walk. Rotating a walk by one edge conjugates its magnetic weight and preserves its occupation monomial. Pairing these terms replaces the phase factor by its real part. Absolute convergence follows from $`\|C\|_2<1`$ for $`|z_i|\le1`$.
 
 The measure $`c\mu_C`$ is generally signed. The generating function has nonnegative coefficients because it is the physical Gaussian probability law; the signed measure itself is not a sampling distribution.
 
@@ -117,23 +117,23 @@ Their total masses satisfy
 
 **Theorem.** Suppose genuine independent Poisson loops with intensity $`\mu_C`$ can be sampled, retaining each loop as a complete object.
 
-1. Retain each source loop independently with probability $`|c(w)|`$. Sum the retained occupations to obtain $`\mathbf n`$, and let $`S=(-1)^{J_-}`$, where $`J_-`$ is the number of retained loops with negative cosine. Then
+**Absolute-cosine estimator.** Retain each source loop independently with probability $`|c(w)|`$. Sum the retained occupations to obtain $`\mathbf n`$, and let $`S=(-1)^{J_-}`$, where $`J_-`$ is the number of retained loops with negative cosine. Then
 
-   ```math
-   \mathbb E\!\left[e^{2r}S F(\mathbf n)\right]
-   =\mathbb E_{P_B}F,
-   \qquad
-   \mathbb E\!\left[(e^{2r}S)^2\right]=e^{4r}.
-   ```
+```math
+\mathbb E\!\left[e^{2r}S F(\mathbf n)\right]
+=\mathbb E_{P_B}F,
+\qquad
+\mathbb E\!\left[(e^{2r}S)^2\right]=e^{4r}.
+```
 
-   Consequently, $`O(e^{4r}\varepsilon^{-2}\log(1/\delta))`$ independent draws suffice for additive error $`\varepsilon`$ with failure probability at most $`\delta`$.
+Consequently, $`O(e^{4r}\varepsilon^{-2}\log(1/\delta))`$ independent draws suffice for additive error $`\varepsilon`$ with failure probability at most $`\delta`$.
 
-2. Retain each source loop independently with probability $`c(w)_+`$. The resulting occupation law $`Q_+`$ is a positive compound-Poisson distribution and satisfies
+**Positive-part sampler.** Retain each source loop independently with probability $`c(w)_+`$. The resulting occupation law $`Q_+`$ is a positive compound-Poisson distribution and satisfies
 
-   ```math
-   \operatorname{TV}(P_B,Q_+)
-   \le\min\left\{1,\frac{e^{2r}-1}{2}\right\}.
-   ```
+```math
+\mathrm{TV}(P_B,Q_+)
+\le\min\left\{1,\frac{e^{2r}-1}{2}\right\}.
+```
 
 Both procedures have source-loop cost bounded by that of the $`C`$ sampler. In particular, positive long loops can be retained; the theorem does not require a length cutoff in the positive part.
 
@@ -145,7 +145,7 @@ Independent thinning changes a Poisson intensity from $`\mu_C`$ to $`\mu_{\mathr
 \begin{aligned}
 \mathbb E[S z^{\mathbf n}]
 &=\exp\left\{\int\left[
-  \operatorname{sgn}(c)z^{v(w)}-1\right]|c|\,d\mu_C\right\}\\
+  \mathrm{sgn}(c)z^{v(w)}-1\right]|c|\,d\mu_C\right\}\\
 &=\exp\left\{\int\left[c z^{v(w)}-|c|\right]d\mu_C\right\}\\
 &=e^{-2r}G_B(z).
 \end{aligned}
@@ -203,7 +203,7 @@ K_C=\begin{pmatrix}0&C\\C&0\end{pmatrix},
 the loop-soup intensity is $`\alpha=1/2`$. In an elimination construction, let $`q_i`$ be the first-return excursion mass at the current vertex after earlier vertices have been removed. The correct partition is obtained from
 
 ```math
-J_i\sim\operatorname{Pois}\!\left[-\alpha\log(1-q_i)\right].
+J_i\sim\mathrm{Pois}\!\left[-\alpha\log(1-q_i)\right].
 ```
 
 For each of these $`J_i`$ loops, draw an independent logarithmic-series count
@@ -236,7 +236,7 @@ p_B(\mathbf n)\le e^\Delta p_C(\mathbf n).
 It follows that
 
 ```math
-\operatorname{TV}(P_B,P_C)
+\mathrm{TV}(P_B,P_C)
 \le1-e^{-\Delta}\le\Delta.
 ```
 
@@ -290,7 +290,7 @@ Thus three log determinants give an upper bound on the negative-mass cost. The a
 
 ### Quartic sensitivity to small edge phases
 
-Suppose a mode-phase gauge makes every nonzero edge phase satisfy $`|\arg B_{ij}|\le\theta`$. A length-$`L`$ alternating loop then has a real phase representative of magnitude at most $`L\theta`$. Using $`1-\cos x\le x^2/2`$ and $`\operatorname{Tr}C^{2k}\le m\rho^{2k}`$, with $`q=\rho^2`$, gives
+Suppose a mode-phase gauge makes every nonzero edge phase satisfy $`|\arg B_{ij}|\le\theta`$. A length-$`L`$ alternating loop then has a real phase representative of magnitude at most $`L\theta`$. Using $`1-\cos x\le x^2/2`$ and $`\mathrm{Tr}C^{2k}\le m\rho^{2k}`$, with $`q=\rho^2`$, gives
 
 ```math
 \Delta\le\frac{m\theta^2 q}{(1-q)^2},
@@ -314,7 +314,7 @@ These orders can occur on connected graphs with large treewidth. Let $`H`$ be a 
 \end{aligned}
 ```
 
-Together with the upper bounds, these yield $`\Delta=\Theta(m\theta^2)`$ and $`\Gamma=\Theta(m\theta^4)`$ as $`\theta\to0`$. The physical mean photon number is $`\Theta(m)`$, since $`\operatorname{Tr}(BB^\dagger)=mt^2/(d+1)`$ and $`\|B\|_2\le t`$. The expander is a graph minor of $`G`$, so taking the Cartesian product does not remove its large support treewidth.
+Together with the upper bounds, these yield $`\Delta=\Theta(m\theta^2)`$ and $`\Gamma=\Theta(m\theta^4)`$ as $`\theta\to0`$. The physical mean photon number is $`\Theta(m)`$, since $`\mathrm{Tr}(BB^\dagger)=mt^2/(d+1)`$ and $`\|B\|_2\le t`$. The expander is a graph minor of $`G`$, so taking the Cartesian product does not remove its large support treewidth.
 
 At $`\theta=m^{-1/4}`$, the cosine estimator has bounded second moment even though $`\Delta=\Theta(\sqrt m)`$. This demonstrates a variance-certificate improvement over a bound exponential in $`\Delta`$. It is **not** a separation between estimation and full sampling: loops shorter than $`\pi/(2\theta)`$ have nonnegative cosine, and the exponentially small long-loop tail at fixed $`t`$ also certifies efficient positive-part sampling for this family. The corresponding strong-sampling argument is given in [topology and phases](topology.md).
 
@@ -432,7 +432,7 @@ An efficiently samplable classical output channel $`K(y\mid\mathbf n)`$ can be a
 This includes threshold detection and independent loss **after the modeled Gaussian circuit**:
 
 ```math
-y_i\mid n_i\sim\operatorname{Binom}(n_i,\eta_i).
+y_i\mid n_i\sim\mathrm{Binom}(n_i,\eta_i).
 ```
 
 Arbitrary losses elsewhere in an interferometer are not silently replaced by this output channel. Their equivalence requires a separate optical model or commutation argument.
@@ -452,10 +452,10 @@ O\!\left(e^{4r}a_0^{-2}\varepsilon^{-2}\log(1/\delta)\right),
 
 or the corresponding bound with a certified upper $`R\ge r`$. For example, errors at most $`\varepsilon e^{-2r}a/4`$ in numerator and denominator give conditional error at most $`\varepsilon`$ when $`0<\varepsilon\le1`$. The normalizer cancels in this ratio.
 
-For a positive approximate sampler, if $`\operatorname{TV}(P_B,Q)\le\tau<a`$, then $`Q(A)>0`$ and the safe bound
+For a positive approximate sampler, if $`\mathrm{TV}(P_B,Q)\le\tau<a`$, then $`Q(A)>0`$ and the safe bound
 
 ```math
-\operatorname{TV}\bigl(P_B(\cdot\mid A),Q(\cdot\mid A)\bigr)
+\mathrm{TV}\bigl(P_B(\cdot\mid A),Q(\cdot\mid A)\bigr)
 \le\frac{2\tau}{a}
 ```
 

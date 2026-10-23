@@ -8,7 +8,7 @@ Let $`C`$ be a symmetric, entrywise nonnegative $`m\times m`$ rational matrix, a
 
 ```math
 M\ge \max\{1,N_C\},\qquad
-N_C=\operatorname{Tr}\!\left[C^2(I-C^2)^{-1}\right].
+N_C=\mathrm{Tr}\!\left[C^2(I-C^2)^{-1}\right].
 ```
 
 The running-time bounds are polynomial in the *value* of $`M`$, not merely its encoding length. One may compute $`N_C`$ by exact rational linear algebra, or supply an independently certified upper bound. If $`\|C\|_2\le1-\kappa`$ is known instead, $`M=\lceil m/\kappa\rceil`$ is a valid conservative choice for $`0<\kappa\le1`$.
@@ -47,7 +47,7 @@ For a loop, use the alternating edge product
 z_B(\ell)=
 \prod_{\substack{0\le t<2k\\t\ \mathrm{even}}}u_{i_ti_{t+1}}
 \prod_{\substack{0\le t<2k\\t\ \mathrm{odd}}}\overline{u_{i_ti_{t+1}}},
-\qquad c_B(\ell)=\operatorname{Re}z_B(\ell).
+\qquad c_B(\ell)=\mathrm{Re}z_B(\ell).
 ```
 
 Choosing the other initial layer conjugates $`z_B`$ and leaves $`c_B`$ unchanged. Reversing a loop has the same property. Therefore no extra layer coin is needed for the cosine estimator.
@@ -102,7 +102,7 @@ Let $`\tau_K`$ be the intensity of loops longer than $`2K`$. Then
 ```math
 \begin{aligned}
 \tau_K
-&=\sum_{k>K}\frac{\operatorname{Tr}(C^{2k})}{2k}\\
+&=\sum_{k>K}\frac{\mathrm{Tr}(C^{2k})}{2k}\\
 &\le \frac{m\rho^{2(K+1)}}{2(K+1)(1-\rho^2)}
 \le\frac{mA}{2}\exp\!\left(-\frac{K+1}{A}\right).
 \end{aligned}
@@ -148,16 +148,16 @@ Then $`\Pr(N>F)\le\tau_N`$. Deleting long loops only decreases the photon count 
 Precompute $`P_r=C^r`$ for $`0\le r\le2K`$ and the rational numbers
 
 ```math
-\lambda_k=\frac{\operatorname{Tr}P_{2k}}{2k},
+\lambda_k=\frac{\mathrm{Tr}P_{2k}}{2k},
 \qquad
 \lambda=\sum_{k=1}^K\lambda_k\le\Lambda_C\le M/2.
 ```
 
 If $`\lambda=0`$, the truncated process is empty. Otherwise its exact ideal construction is:
 
-1. Draw $`J\sim\operatorname{Poisson}(\lambda)`$.
+1. Draw $`J\sim\mathrm{Poisson}(\lambda)`$.
 2. For each of the $`J`$ marks, draw $`k`$ with probability $`\lambda_k/\lambda`$.
-3. Draw a root $`i`$ with probability $`(P_{2k})_{ii}/\operatorname{Tr}P_{2k}`$.
+3. Draw a root $`i`$ with probability $`(P_{2k})_{ii}/\mathrm{Tr}P_{2k}`$.
 4. Starting at $`x=i`$ with $`r=2k`$ remaining edges, draw the next vertex $`y`$ with probability
 
 ```math
@@ -284,7 +284,7 @@ For $`X=B,C,D`$,
 
 ```math
 \Lambda_X=\frac12\sum_{j\ge1}
-\frac{\operatorname{Tr}[(XX^\dagger)^j]}j.
+\frac{\mathrm{Tr}[(XX^\dagger)^j]}j.
 ```
 
 Every one of these matrices has norm at most $`\rho`$. The tail beyond $`L`$ is bounded by
@@ -459,7 +459,7 @@ and
 \le5V.
 ```
 
-Thus $`|\mathbb E Y-\mathbb E_{P_B}f|<\epsilon/8`$ while $`\operatorname{Var}Y\le5V`$. Divide independent values into groups of
+Thus $`|\mathbb E Y-\mathbb E_{P_B}f|<\epsilon/8`$ while $`\mathrm{Var}Y\le5V`$. Divide independent values into groups of
 
 ```math
 s=\left\lceil80V/\epsilon^2\right\rceil
@@ -514,7 +514,7 @@ The sharper sign measure is
 r_B=\int(-c_B(\ell))_+\,d\mu_C(\ell).
 ```
 
-Retain each genuine reference loop independently with probability $`|c_B(\ell)|`$. Give a retained loop the sign $`\operatorname{sign}(c_B(\ell))`$, let $`S`$ be the product of its retained signs, and let $`n_{\rm abs}`$ be the total retained occupation. The resulting Poisson intensity is $`|c_B|\mu_C`$. Its ideal identities are
+Retain each genuine reference loop independently with probability $`|c_B(\ell)|`$. Give a retained loop the sign $`\mathrm{sign}(c_B(\ell))`$, let $`S`$ be the product of its retained signs, and let $`n_{\rm abs}`$ be the total retained occupation. The resulting Poisson intensity is $`|c_B|\mu_C`$. Its ideal identities are
 
 ```math
 \mathbb E S=d=e^{-2r_B},
@@ -733,12 +733,12 @@ The required continuity bound can be proved directly from the signed loop expans
 ```math
 \begin{aligned}
 \eta_{\rm loop}
-&\le\sum_{k\ge1}\operatorname{Tr}(ER^{2k-1})\\
+&\le\sum_{k\ge1}\mathrm{Tr}(ER^{2k-1})\\
 &\le\frac{m r}{1-r^2}\,\|E\|_2.
 \end{aligned}
 ```
 
-Indeed, expand a difference of two length-$`2k`$ edge products into $`2k`$ terms, each containing one changed edge and otherwise entries bounded by $`R`$. Summing over rooted closed walks yields $`2k\operatorname{Tr}(ER^{2k-1})`$; the loop factor $`1/(2k)`$ cancels it. Taking real parts cannot increase the bound.
+Indeed, expand a difference of two length-$`2k`$ edge products into $`2k`$ terms, each containing one changed edge and otherwise entries bounded by $`R`$. Summing over rooted closed walks yields $`2k\mathrm{Tr}(ER^{2k-1})`$; the loop factor $`1/(2k)`$ cancels it. Taking real parts cannot increase the bound.
 
 Write the compensated signed measure on occupations as $`\nu_B=\int(\delta_{v(\ell)}-\delta_0)c_B(\ell)\,d\mu_{|B|}(\ell)`$. Equivalently its weights are alternating products of the entries of $`B`$, assigning zero to a product with a zero edge; this definition never divides by an original entry. Its convolution exponential is the physical law $`P_B=\exp_*\nu_B`$. The preceding bound implies
 

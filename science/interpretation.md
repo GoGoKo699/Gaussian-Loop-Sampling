@@ -47,7 +47,7 @@ The positive loop representation is a condition on a count-generating function. 
 |---|---|---|
 | Number of modes $`m`$ | Matrix preparation, categorical scans, output representation | Cubic dense preprocessing may dominate practical runtime |
 | Reference mean $`\overline N_C`$ | Expected number of generated visits | May be much larger than the target mean $`\overline N_B`$ |
-| Gap below $`\|C\|_2=1`$ or a mean bound | Tail cutoffs and finite precision | An exponentially unstable reference need not give an efficient algorithm |
+| Gap below $`\lVert C\rVert_2=1`$ or a mean bound | Tail cutoffs and finite precision | An exponentially unstable reference need not give an efficient algorithm |
 | $`\Gamma`$ | Exact cosine-estimator second moment through $`e^\Gamma`$ | Sufficient certificate for this estimator, not a hardness criterion |
 | Negative loop mass $`r`$ | Absolute-cosine sign cost and positive-part sampling error | Its efficient approximation or an upper bound must be charged |
 | Observable evaluation cost | Computes the requested bounded function on each draw | A formula specifying a hard-to-evaluate function is not free access |

@@ -30,6 +30,12 @@ Start with [the model and result map](science/model.md), then follow:
 
 [Related work](references/RELATED_WORK.md) attributes the inherited Gaussian and Markov-loop identities and compares the relevant simulation algorithms. [The bibliography](references/references.bib) records the cited sources. [llms.txt](llms.txt) maps reader questions to the authoritative pages.
 
+## Learn the project
+
+The selected educational anchor is **Weedbrook et al., *Gaussian Quantum Information***, *Reviews of Modern Physics* **84**, 621–669 (2012), [arXiv:1110.3234](https://arxiv.org/abs/1110.3234). Its treatment of Gaussian states, squeezing, symplectic transformations, and photon detection supplies the physical foundation.
+
+Start with the [anchor and source-to-project bridge](learning/ANCHOR.md), which identifies the relevant sections, translates covariance notation into the pairing matrix used here, and explains the additional probability and graph ideas supplied by this repository. Then follow the [30-milestone map](learning/MILESTONES.md): a common route from local physical objects to the complete sampling and estimation results. The map links each understanding target to the authoritative scientific account; specialist readers can go directly to the proofs above.
+
 ## Reproduce the calculations
 
 The numerical reference implementation requires Python 3.12 and the pinned NumPy dependency. From the repository root:
