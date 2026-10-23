@@ -16,7 +16,7 @@ The use of absolute quasiprobability weights as a proposal, followed by a signed
 
 ### Published all-graph sampling theorem
 
-Anand, Chen, Cryan, Freifeld, Goldberg, Guo, and Zhang, [*Simulating Gaussian boson sampling on graphs in polynomial time*](https://arxiv.org/html/2511.16558v2), arXiv:2511.16558v2 (25 June 2026), prove polynomial-time approximate sampling from the distribution on subsets of an unweighted graph with weights $`c^{2|S|}\operatorname{PM}(G[S])^2`$. Their Theorem 1.1 has no graph-density restriction. Its proof samples perfect matchings on two graph copies joined by corresponding-vertex edges. Lemma 4.2 bounds the near-perfect/perfect matching partition-function ratio. The distribution in this theorem is a collision-free subset distribution; the paper distinguishes it from the general repeated-index Gaussian formula in Section 4.
+Anand, Chen, Cryan, Freifeld, Goldberg, Guo, and Zhang, [*Simulating Gaussian boson sampling on graphs in polynomial time*](https://arxiv.org/html/2511.16558v2), arXiv:2511.16558v2 (25 June 2026), prove polynomial-time approximate sampling from the distribution on subsets of an unweighted graph with weights $`c^{2|S|}\mathrm{PM}(G[S])^2`$. Their Theorem 1.1 has no graph-density restriction. Its proof samples perfect matchings on two graph copies joined by corresponding-vertex edges. Lemma 4.2 bounds the near-perfect/perfect matching partition-function ratio. The distribution in this theorem is a collision-free subset distribution; the paper distinguishes it from the general repeated-index Gaussian formula in Section 4.
 
 This result supersedes density restrictions relevant to Zhang et al., [*Efficient classical sampling from Gaussian boson sampling distributions on unweighted graphs*](https://doi.org/10.1038/s41467-025-64442-7), *Nature Communications* **16**, 9335 (2025). A direct loop sampler can improve the construction and cost without establishing the first polynomial algorithm for positive GBS.
 
@@ -24,7 +24,7 @@ This result supersedes density restrictions relevant to Zhang et al., [*Efficien
 
 The following extensions explain why the distinction between unweighted subsets and weighted full counts is insufficient, by itself, to establish a new polynomial-time simulability class. They are deductions presented here, rather than statements attributed verbatim to Anand et al.'s theorem.
 
-For a nonnegative symmetric matrix $`C`$, let $`h(S)=\operatorname{haf}(C_S)`$. Use weight $`C_{ij}`$ on corresponding edges in each of two copies and weight one on each edge joining a vertex to its copy. A perfect matching then gives subset weight $`h(S)^2`$. In the near-perfect comparison, the products appearing in the two possible unmatched-vertex cases have the forms $`h(S)h(S\cup\{u,v\})`$ and $`h(S\cup\{u\})h(S\cup\{v\})`$. Applying $`ab\le(a^2+b^2)/2`$ gives the same bound
+For a nonnegative symmetric matrix $`C`$, let $`h(S)=\mathrm{haf}(C_S)`$. Use weight $`C_{ij}`$ on corresponding edges in each of two copies and weight one on each edge joining a vertex to its copy. A perfect matching then gives subset weight $`h(S)^2`$. In the near-perfect comparison, the products appearing in the two possible unmatched-vertex cases have the forms $`h(S)h(S\cup\{u,v\})`$ and $`h(S\cup\{u\})h(S\cup\{v\})`$. Applying $`ab\le(a^2+b^2)/2`$ gives the same bound
 
 ```math
 Z_{n-1}<2n^2 Z_n.
@@ -32,7 +32,7 @@ Z_{n-1}<2n^2 Z_n.
 
 Thus the weighted version follows through the same matching reduction, with the numerical weight and bit costs included. In the physical reference regime $`\|C\|_2<1`$, every matrix entry is below one, so the largest original edge weight is bounded.
 
-To recover multiplicities, replace each optical mode by $`K`$ distinct clones. Give the edge between a clone of mode $`i`$ and a distinct clone of mode $`j`$ weight $`C_{ij}/K`$. This includes pairs of different clones of the same mode when $`C_{ii}>0`$. A subset with $`n_i`$ selected clones of mode $`i`$ has hafnian $`K^{-|\mathbf n|/2}\operatorname{haf}(C[\mathbf n])`$. Summing over its $`\prod_i\binom K{n_i}`$ possible clone subsets yields a projected law
+To recover multiplicities, replace each optical mode by $`K`$ distinct clones. Give the edge between a clone of mode $`i`$ and a distinct clone of mode $`j`$ weight $`C_{ij}/K`$. This includes pairs of different clones of the same mode when $`C_{ii}>0`$. A subset with $`n_i`$ selected clones of mode $`i`$ has hafnian $`K^{-|\mathbf n|/2}\mathrm{haf}(C[\mathbf n])`$. Summing over its $`\prod_i\binom K{n_i}`$ possible clone subsets yields a projected law
 
 ```math
 p_K(\mathbf n)
@@ -44,14 +44,14 @@ a_K(\mathbf n)=\prod_i\frac{(K)_{n_i}}{K^{n_i}},
 where $`(K)_n=K(K-1)\cdots(K-n+1)`$ for $`n\le K`$ and is zero for $`n>K`$. This is rejection reweighting with acceptance probability $`a_K`$, so
 
 ```math
-\operatorname{TV}(P_K,P_C)
+\mathrm{TV}(P_K,P_C)
 \le1-\mathbb E_{P_C}a_K.
 ```
 
 For $`|\mathbf n|\le L\le K`$, the product inequality $`1-\prod_j(1-x_j)\le\sum_jx_j`$ gives $`1-a_K(\mathbf n)\le L^2/(2K)`$. Consequently,
 
 ```math
-\operatorname{TV}(P_K,P_C)
+\mathrm{TV}(P_K,P_C)
 \le\Pr_{P_C}(|\mathbf n|>L)+\frac{L^2}{2K}
 \le\frac{\overline N_C}{L}+\frac{L^2}{2K}.
 ```
@@ -73,7 +73,7 @@ Youngrong Lim, [*Classical Simulation of Lossy Gaussian Boson Sampling beyond Sq
 ```math
 \log(P_c/Q_c)
 =\sum_{j\ge2}\frac{q^j}{2j}
-\left(\operatorname{Tr}Y^j-N\right).
+\left(\mathrm{Tr}Y^j-N\right).
 ```
 
 The subsequent analysis controls signed coefficients through convolution. Therefore, neither the even-cycle expansion of GBS nor the use of its signed remainder is new here. The present result instead uses the absolute matrix $`C=|B|`$ as a samplable envelope and quantifies the negative cosine mass for each supplied matrix, without requiring loss as the source of the approximation. Its scope is restricted by $`\|C\|_2<1`$ and by the resulting resource bounds.
@@ -129,7 +129,7 @@ For a connected nonempty vertex set $`S`$, define
 
 ```math
 a_B(S)=\sum_{\substack{n_i\ge1\ (i\in S)}}
-\frac{|\operatorname{haf}(B_S[\mathbf n])|^2}{\prod_{i\in S}n_i!}.
+\frac{|\mathrm{haf}(B_S[\mathbf n])|^2}{\prod_{i\in S}n_i!}.
 ```
 
 If the occupied support is disconnected, its hafnian weight factors over its connected components. Thus the support law is exactly a positive polymer model: a polymer is a connected occupied set, and distinct polymers must have graph distance at least two. Its partition function is
@@ -197,7 +197,7 @@ Next truncate the photon number **inside each retained polymer** to $`L`$. For $
 ```math
 b_{S,L}
 =\sum_{\substack{n_i\ge1\ (i\in S)\\|\mathbf n|>L}}
-\frac{|\operatorname{haf}(B_S[\mathbf n])|^2}{\prod_i n_i!}
+\frac{|\mathrm{haf}(B_S[\mathbf n])|^2}{\prod_i n_i!}
 \le x^{-L}2^{|S|/2}.
 ```
 

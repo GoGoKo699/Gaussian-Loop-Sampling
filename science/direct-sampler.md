@@ -2,7 +2,7 @@
 
 ## Result and provenance
 
-Let $`C=C^{\mathsf T}\ge0`$ with $`\|C\|_2<1`$, and write $`\overline N_C=\operatorname{Tr}[C^2(I-C^2)^{-1}]`$. In an ideal real-arithmetic model with exact elementary random variates, the complete Gaussian photon-count law $`P_C`$ can be sampled after $`O(m^3)`$ preprocessing using $`O(m^2)`$ stored arithmetic values. Each draw uses expected
+Let $`C=C^{\mathsf T}\ge0`$ with $`\|C\|_2<1`$, and write $`\overline N_C=\mathrm{Tr}[C^2(I-C^2)^{-1}]`$. In an ideal real-arithmetic model with exact elementary random variates, the complete Gaussian photon-count law $`P_C`$ can be sampled after $`O(m^3)`$ preprocessing using $`O(m^2)`$ stored arithmetic values. Each draw uses expected
 
 ```math
 O(m+m\overline N_C)
@@ -52,7 +52,7 @@ Count the starting vertex and each internal visit, but exclude the terminal retu
 Independently for each $`i`$, draw
 
 ```math
-J_i\sim\operatorname{Poisson}\!\left(-\frac12\log(1-q_i)\right).
+J_i\sim\mathrm{Poisson}\!\left(-\frac12\log(1-q_i)\right).
 ```
 
 For each of these $`J_i`$ loops, draw a positive integer $`K`$ from the logarithmic-series law
@@ -116,7 +116,7 @@ The sharper norm bound is
 
 ```math
 \Lambda_{>2K}
-=\sum_{k>K}\frac{\operatorname{Tr}C^{2k}}{2k}
+=\sum_{k>K}\frac{\mathrm{Tr}C^{2k}}{2k}
 \le\frac{m\rho^{2K+2}}{(2K+2)(1-\rho^2)}.
 ```
 

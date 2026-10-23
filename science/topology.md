@@ -51,7 +51,7 @@ The count $`n_i(w)`$ is the number of visits to the two copies of mode $`i`$, ex
  &=\sum_w\mu_C(w)\cos\Phi(w)\,[z^{n(w)}-1],\\
 \Lambda_C
  &=\sum_w\mu_C(w)
-   =\sum_{k\ge1}\frac{\operatorname{Tr}C^{2k}}{2k},\\
+   =\sum_{k\ge1}\frac{\mathrm{Tr}C^{2k}}{2k},\\
 \Delta
  &=\sum_w\mu_C(w)\,[1-\cos\Phi(w)]\ge0.
 \end{aligned}
@@ -66,7 +66,7 @@ A diagonal optical phase change has the form $`B\mapsto UBU`$, with $`U`$ diagon
 
 ```math
 T_{UBU}=V T_B V^\dagger,
-\qquad V=\operatorname{diag}(U,\overline U).
+\qquad V=\mathrm{diag}(U,\overline U).
 ```
 
 Consequently, every loop holonomy is unchanged. In particular, $`B=UCU`$ implies $`P_B=P_C`$ and $`\Delta=0`$. The doubled-graph construction is necessary when interpreting phases: a symmetric optical edge has the same phase in $`B_{ij}`$ and $`B_{ji}`$, while reversed edges of the Hermitian lift have conjugate phases.
@@ -84,7 +84,7 @@ P_B(n)\le e^\Delta P_C(n)
 \tag{4}
 ```
 
-**Proof.** Expand the hafnian over perfect matchings. The triangle inequality gives $`|\operatorname{haf}(B_n)|\le\operatorname{haf}(C_n)`$. The ratio of the state-normalization factors is $`e^\Delta`$, proving the pointwise bound, including configurations of zero reference probability. Since
+**Proof.** Expand the hafnian over perfect matchings. The triangle inequality gives $`|\mathrm{haf}(B_n)|\le\mathrm{haf}(C_n)`$. The ratio of the state-normalization factors is $`e^\Delta`$, proving the pointwise bound, including configurations of zero reference probability. Since
 
 ```math
 \min\{P_B(n),P_C(n)\}\ge e^{-\Delta}P_B(n),
@@ -114,7 +114,7 @@ Small residual optical phases give a different positive sampler, which can be mo
 \|P_B-Q_K\|_{\mathrm{TV}}
  &\le\frac12\left(e^{2\Lambda_{>2K}}-1\right),\\
 \Lambda_{>2K}
- &=\sum_{k>K}\frac{\operatorname{Tr}C^{2k}}{2k}\\
+ &=\sum_{k>K}\frac{\mathrm{Tr}C^{2k}}{2k}\\
  &\le\frac{\overline N_C}{2K+2},\\
 \Lambda_{>2K}
  &\le\frac{m r^{2K+2}}{(2K+2)(1-r^2)}
@@ -123,7 +123,7 @@ Small residual optical phases give a different positive sampler, which can be mo
 \tag{6}
 ```
 
-where $`\overline N_C=\operatorname{Tr}[C^2(I-C^2)^{-1}]`$.
+where $`\overline N_C=\mathrm{Tr}[C^2(I-C^2)^{-1}]`$.
 
 **Proof.** For a lifted loop of length $`L`$, sum the signed real edge phases before reduction modulo $`2\pi`$. The absolute value of this sum is at most $`L\theta`$. Hence the retention probability is nonnegative for every retained length.
 
@@ -152,7 +152,7 @@ The second factor has total mass one and need not be positive. Absolute converge
 \le e^{\|\kappa\|_1}-1.
 ```
 
-Convolution with the probability measure $`Q_K`$ contracts the $`\ell^1`$ norm, proving the first inequality of (6). The remaining bounds follow from $`2k\ge2K+2`$ and $`\operatorname{Tr}C^{2k}\le m r^{2k}`$. $`\square`$
+Convolution with the probability measure $`Q_K`$ contracts the $`\ell^1`$ norm, proving the first inequality of (6). The remaining bounds follow from $`2k\ge2K+2`$ and $`\mathrm{Tr}C^{2k}\le m r^{2k}`$. $`\square`$
 
 To target error $`\varepsilon`$, it suffices to impose both
 
@@ -185,7 +185,7 @@ Set $`h=2\lceil g/2\rceil`$. Equations (3) and (4) give the elementary estimate
 
 ```math
 \Delta\le
-2\sum_{k\ge h/2}\frac{\operatorname{Tr}C^{2k}}{2k}
+2\sum_{k\ge h/2}\frac{\mathrm{Tr}C^{2k}}{2k}
 \le\frac{2m t^h}{h(1-t^2)}.
 \tag{9}
 ```
@@ -211,7 +211,7 @@ For a directed edge $`e=(x,y)`$, write $`\bar e=(y,x)`$, $`a_e=a_{xy}`$, and $`H
 
 ```math
 N_H[e,f]
-=\mathbf1\{\operatorname{head}(e)=\operatorname{tail}(f),\ f\ne\bar e\}\,H_f.
+=\mathbf1\{\mathrm{head}(e)=\mathrm{tail}(f),\ f\ne\bar e\}\,H_f.
 \tag{10}
 ```
 
@@ -238,7 +238,7 @@ with zero off-diagonal entries otherwise. Then
 \tag{11}
 ```
 
-**Proof.** Let $`S[e,v]=\mathbf1\{\operatorname{head}(e)=v\}`$, $`R[v,f]=\mathbf1\{\operatorname{tail}(f)=v\}H_f`$, and $`J[e,f]=\mathbf1\{f=\bar e\}H_f`$. Then $`N_H=SR-J`$. Each undirected-edge block of $`I+uJ`$ has determinant $`1-u^2a_e^2`$. The matrix determinant lemma yields
+**Proof.** Let $`S[e,v]=\mathbf1\{\mathrm{head}(e)=v\}`$, $`R[v,f]=\mathbf1\{\mathrm{tail}(f)=v\}H_f`$, and $`J[e,f]=\mathbf1\{f=\bar e\}H_f`$. Then $`N_H=SR-J`$. Each undirected-edge block of $`I+uJ`$ has determinant $`1-u^2a_e^2`$. The matrix determinant lemma yields
 
 ```math
 \begin{aligned}
@@ -295,8 +295,8 @@ The scalar $`1+p u^2`$ and the factor $`(1-u^2)^{|E|-|V|}`$ in (12) do not depen
 \boxed{
 \Delta
 =\frac12\sum_{L\ge1}\frac{u^L}{L}
- \left(\operatorname{Tr}N_0^L-
-       \operatorname{Tr}N_\phi^L\right).
+ \left(\mathrm{Tr}N_0^L-
+       \mathrm{Tr}N_\phi^L\right).
 }
 \tag{14}
 ```
@@ -306,12 +306,12 @@ Indeed, $`I-uH_\phi+pu^2I=(1+pu^2)(I-sH_\phi)`$ and $`\det(I-sH_\phi)=\det(I-B^\
 The traces in (14) count cyclically nonbacktracking closed walks, including the prohibition on reversal across the closing edge. Pairing each with its reverse shows
 
 ```math
-0\le\operatorname{Tr}N_0^L-\operatorname{Tr}N_\phi^L
-\le2\operatorname{Tr}N_0^L.
+0\le\mathrm{Tr}N_0^L-\mathrm{Tr}N_\phi^L
+\le2\mathrm{Tr}N_0^L.
 \tag{15}
 ```
 
-Both traces vanish for odd $`L`$, and there are no such walks of length below $`g`$. The elementary estimate $`\operatorname{Tr}N_0^L\le2md\,p^L`$ therefore gives
+Both traces vanish for odd $`L`$, and there are no such walks of length below $`g`$. The elementary estimate $`\mathrm{Tr}N_0^L\le2md\,p^L`$ therefore gives
 
 ```math
 \Delta\le A_{m,d,h}(t)
@@ -340,7 +340,7 @@ The following spectral count is a direct consequence of (12); the equivalent Che
 Every root in the third row has modulus $`\sqrt p`$, including repeated roots at the endpoints. Possible Jordan blocks do not change power traces. Thus, for even positive $`L`$,
 
 ```math
-0\le\operatorname{Tr}N_0^L
+0\le\mathrm{Tr}N_0^L
 \le4p^L+(4m-8)p^{L/2}+2m(d-2)+4.
 \tag{17}
 ```
@@ -368,7 +368,7 @@ This estimate is uniform over all symmetric choices of edge phases. It bounds th
 
 ### 7.1 Graph construction and established graph properties
 
-Let $`\ell`$ range over primes congruent to $`13`$ modulo $`20`$, and take the bipartite LPS graph $`G_\ell=X^{5,\ell}`$. These primes satisfy $`\ell\equiv1\pmod4`$ and $`(5/\ell)=-1`$. The graph is a connected six-regular Cayley graph on $`\operatorname{PGL}_2(\mathbb F_\ell)`$, of order
+Let $`\ell`$ range over primes congruent to $`13`$ modulo $`20`$, and take the bipartite LPS graph $`G_\ell=X^{5,\ell}`$. These primes satisfy $`\ell\equiv1\pmod4`$ and $`(5/\ell)=-1`$. The graph is a connected six-regular Cayley graph on $`\mathrm{PGL}_2(\mathbb F_\ell)`$, of order
 
 ```math
 m=\ell(\ell^2-1),
@@ -482,7 +482,7 @@ It follows, for both the target and the positive reference, that
 \tag{24}
 ```
 
-Thus photon number is $`\Theta(m)`$ at every fixed positive $`t<1`$. At $`d=6,t=1/2`$, both means lie between $`m/24`$ and $`m/18`$. The Takagi squeezing parameters are at most $`\operatorname{arctanh}t`$, independent of system size.
+Thus photon number is $`\Theta(m)`$ at every fixed positive $`t<1`$. At $`d=6,t=1/2`$, both means lie between $`m/24`$ and $`m/18`$. The Takagi squeezing parameters are at most $`\mathrm{arctanh}t`$, independent of system size.
 
 ### 7.4 Linear support treewidth
 
@@ -507,7 +507,7 @@ d|X|\ge e(S,V\setminus S)
 Applying $`\lambda=2\sqrt{d-1}`$ proves
 
 ```math
-\operatorname{tw}(G)
+\mathrm{tw}(G)
 \ge\frac{d-2\sqrt{d-1}}{8d}\,m-1.
 \tag{26}
 ```
